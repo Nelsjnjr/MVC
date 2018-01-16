@@ -1,0 +1,25 @@
+﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.Models.Common.HeaderModel>
+
+
+<div class='masthead'>
+    <!-- subscribe -->
+    <div class='subscribeBtnContainer'>
+        @using (BeginRenderLink(Model, m => m.SubscribeMeLink, isEditable: true))
+        {
+            @Editable(Model, x => x.SubscribeMeTitle)
+        }
+    </div>
+    <!-- logo -->
+    <div class='logoContainer'>
+        @using (BeginRenderLink(x => x.LogoUrl, isEditable: true))
+        {
+            @RenderImage(Model, x => x.Logo, new { w = 78, h = 98 }, isEditable: true, outputHeightWidth: true)
+        }
+    </div>
+    <!-- top menu -->
+    <div class='topmenuContainer'>
+        <ul class='topmenuList'>
+            @Html.Sitecore().Placeholder("phColumnNavigation")
+        </ul>
+    </div>
+</div>

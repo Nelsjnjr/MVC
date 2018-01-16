@@ -1,0 +1,7 @@
+﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.Models.Component.Social>
+@using Sitecore.Mvc
+ 
+@using (BeginRenderLink(Model, m => m.SocialMediaUrl, new { target = "_blank" }, isEditable: true))
+{
+    @RenderImage(Model, x => x.SocialMediaIcon, isEditable: true, outputHeightWidth: true);
+}

@@ -1,0 +1,29 @@
+﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.Models.Common.LeftContainerModel>
+<!-- the rel value should be the path to the small image that will be displayed on mobile screens -->
+
+@RenderImage(Model, x => x.leftImage, new { id = "leftImage", rel = Model.RelImage.Src }, isEditable: true)
+
+<div class='contentHolder'>
+    <div class="contentHolder">
+        <div class="pageTitleContainer">
+            @if (Model.IsLeftArrowAvailable)
+            {
+                <div class="leftArrow">
+                    @using (BeginRenderLink(Model, m => m.LeftArrowLink, isEditable: true))
+                    {
+                    }
+                </div>
+            }
+            <h5> @Model.Title</h5>
+            @if (Model.IsRightArrowAvailable)
+            {
+                <div class="rightArrow">
+                    @using (BeginRenderLink(Model, m => m.RightArrowLink, isEditable: true))
+                {
+                }
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

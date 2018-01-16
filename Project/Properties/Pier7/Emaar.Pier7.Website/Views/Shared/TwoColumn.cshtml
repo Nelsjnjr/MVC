@@ -1,0 +1,26 @@
+﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.Models.Common.Settings>
+@using Sitecore.Web;
+@using Sitecore.Mvc.Presentation;
+
+<div class='contentContainer'>
+    <div class='leftContainer'>
+        @Html.Sitecore().Placeholder("phLeftContainer")
+    </div>
+    <div class='rightContainer'>
+
+        @Html.Sitecore().Placeholder("phBreadcrumb")    
+        @if (@Model.Value != "galleryContainer")
+        {
+            <div class='@Model.Value'>
+                @Html.Sitecore().Placeholder("phRightContainer")
+            </div>
+        }
+        else
+        {
+            @Html.Sitecore().ViewRendering("~/Views/Pages/Gallery.cshtml")
+        }
+
+       
+
+    </div>
+</div>

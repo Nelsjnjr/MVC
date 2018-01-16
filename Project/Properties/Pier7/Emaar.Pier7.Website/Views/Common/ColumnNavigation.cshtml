@@ -1,0 +1,14 @@
+﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.Models.Common.ColumnNavigationViewModel>
+    <!-- ColumnNavigation Root items / top navigation without sub navigation links-->
+    @foreach (var columnNavigation in Model.ColumnNavigationItems)
+    {
+        <li>
+            @using (BeginRenderLink(columnNavigation, m => m.InternalLink, isEditable: true))
+            {
+                @Editable(columnNavigation, x => x.NavigationTitle)
+            }
+
+
+        </li>
+    }
+

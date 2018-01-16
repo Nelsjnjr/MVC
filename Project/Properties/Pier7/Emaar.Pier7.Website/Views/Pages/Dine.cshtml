@@ -1,0 +1,24 @@
+﻿@using Sitecore.Mvc.Presentation
+
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.Models.Pages.Dine>
+
+@if (Model.IsTitleAllowed)
+{
+<h1>@Model.Title</h1>
+}
+<div class="waysToDineItem">
+
+    @using (BeginRenderLink(Model, m => m.ImageUrl, isEditable: true))
+    {
+        @RenderImage(Model, x => x.ImageFile, isEditable: true, outputHeightWidth: false)
+    }
+    <div class="restaurantInfo">
+        <div class="title">@Editable(Model, x => x.ContentTitle)</div>
+        <p>@Editable(Model, x => x.ContentDescription) </p>
+        @using (BeginRenderLink(Model, m => m.CallToAction, new { @class = "readmore" }, isEditable: true ))
+            {
+            @Editable(Model, x => x.CallToActionTitle)
+        }
+
+    </div><div class='clearfix'></div>
+</div>

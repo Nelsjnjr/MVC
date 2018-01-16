@@ -1,0 +1,31 @@
+﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.Models.Component.BreadcrumbViewModel>
+<div class='breadcrums'>
+    <ul>
+        @foreach (var item in Model.MainBreadcrumbs)
+        {
+            if (!item.IsLastItem)
+            {
+                <li> <a href="@item.Url">@item.Text</a> </li>
+            }
+            else
+            {
+                <li class="lastItem"> @item.Text</li>
+            }
+        }
+    </ul>
+</div>
+@if (Model.SubMenus.Count > 0)
+{
+    <div class="submenu">
+        <ul>
+            @foreach (var nav in Model.SubMenus)
+            {
+               
+                    <li>  <a href="@nav.Url">@nav.Title</a></li>
+
+              
+            }
+        </ul>
+
+    </div>
+}

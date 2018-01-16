@@ -1,0 +1,38 @@
+﻿@using Sitecore.Mvc.Presentation
+
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.Models.Pages.HomeModel>
+<div class="imageLinksContainer">
+    @foreach (var item in Model.PageCarousel)
+    {
+        int count = 1;
+        <div class="imageLinkCol" id="col" @count>
+            @using (BeginRenderLink(item, m => m.CallToAction, isEditable: true))
+            {
+                count++;
+                <div>
+                    @RenderImage(item, x => x.CarouseForelmage, new { @class = "bwImage" }, isEditable: true, outputHeightWidth: true)
+                    @RenderImage(item, x => x.CarouselBackImage, new { @class = "colouredImage" }, isEditable: true, outputHeightWidth: true)
+
+                </div>
+                <div class="imageLinkContent">
+                    <h5>@Editable(item, x => x.ImageTitle)</h5>
+                </div>
+            }
+
+        </div>
+    }
+</div> 
+<div class="imageLinksContainerMob">
+    @foreach (var item in Model.PageCarousel)
+    {
+        <div>
+            @using (BeginRenderLink(item, m => m.CallToAction, isEditable: true))
+            {
+                @RenderImage(item, x => x.MobileCarouselImage,  isEditable: true, outputHeightWidth: true)
+            }
+        </div>
+    }
+
+</div>
+
+

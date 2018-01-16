@@ -1,0 +1,41 @@
+.imageLinkContent h5 {
+  margin-left: 0;
+  padding: 10px 0;
+  position: relative;
+  text-align: center;
+  top: 25px;
+  width: 243px;
+}
+
+h5 {
+  font-size: 2em !important;
+  font-weight: 200;
+  margin: 20px;
+}
+
+.leftContainer .contentHolder h5 {
+  float: left;
+  margin: 0;
+  padding-top: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 242px;
+}
+
+.download {
+  background-position: left --111px;
+  height: 20px;
+  padding-top: 0;
+}
+
+.mobile, .email, .web, .download{
+  background-image: url("../img/backgrounds/mobile_email_icon.png");
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+  padding-left: 30px;
+}
+
+.h1footer h1 {
+  font-size: 0;
+  font-weight: 200;
+}

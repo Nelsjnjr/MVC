@@ -1,0 +1,18 @@
+﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.Models.Common.FooterModel>
+
+<div class='footer'>
+    <div class='footerContentHolder'>
+        <!-- left side -->
+        <div class='left'>
+            <ul class='footerList'>
+              <li>@Editable(Model, x => x.Copyright)</li>
+                @Html.Sitecore().Placeholder("phColumnNavigation")
+                <li class="h1footer"><h1>@Editable(Model, x => x.Title)</h1></li>
+            </ul>
+        </div>
+        <!-- end of left side -->
+        <div class='clearfix'>
+        </div>
+    </div>
+</div>
+
