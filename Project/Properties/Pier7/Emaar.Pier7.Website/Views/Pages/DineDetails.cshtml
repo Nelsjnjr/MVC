@@ -1,5 +1,4 @@
-﻿
-@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.Models.Pages.DineDetails>
+﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.Models.Pages.DineDetails>
 @using Sitecore.Mvc.Presentation
 <div class="contentContainer">
     <h1>@Editable(Model, x => x.DineTitle)</h1>
@@ -14,45 +13,31 @@
     </div>
     <div class="right">
         <ul>
-
             <li class="mobile">@Editable(Model, x => x.MobileNumber)</li>
             <li class="email">
                 <a href="mailto:@Model.Email" target="_top">@Editable(Model, x => x.Email)</a>
             </li>
             <li class="web">
-                @RenderLink(Model, m => m.WebsiteAddress, new { rel = "nofollow", target = "_blank" }, isEditable: true)           
-
+                @RenderLink(Model, m => m.WebsiteAddress, new { rel = "nofollow", target = "_blank" }, isEditable: true)       
             </li>
             <li class="download">
                 @using (BeginRenderLink(Model, m => m.DownloadUrl, new { rel = "nofollow", target = "_blank" }, isEditable: true))
                 {
                     @Editable(Model, x => x.DownloadTitle);
                 }
-
             </li>
         </ul>
         <div class="socialmediaContainer">
             @Html.Sitecore().Placeholder("phSocialmedia")
-            @*@if (Model.SocialMediaItems != null)
-            {
-                foreach (var social in Model.SocialMediaItems)
-                {
-                    using (BeginRenderLink(social, m => m.SocialMediaUrl, new { target = "_blank" }, isEditable: true))
-                    {
-                        @RenderImage(social, x => x.SocialMediaIcon, isEditable: true, outputHeightWidth: true);
-                    }
-                }
-            }*@
-
-        </div>
+       </div>
     </div>
 </div>
 <div class="restaurantThumbHolder">
     @if (Model.DineImages != null)
     {
-        foreach (var images in Model.DineImages)
+        foreach (var images in Model.DineImages.FirstOrDefault().CauroselImages)
         {
-            RenderImage(images, x => x.ImageFile, new { border = "0", alt = "", title = "" }, isEditable: true, outputHeightWidth: true);
+            @RenderImage(images, x => x.ImageFile, new { border = "0", alt = "", title = "" }, isEditable: true, outputHeightWidth: true);
         }
     }
 </div>

@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>6</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -46,6 +47,10 @@
     <Reference Include="Castle.Core">
       <HintPath>..\..\..\..\lib\Castle.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Configy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Configy.1.0.0\lib\net45\Configy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Glass.Mapper">
       <HintPath>..\..\..\..\lib\Glass.Mapper.dll</HintPath>
     </Reference>
@@ -55,14 +60,73 @@
     <Reference Include="Glass.Mapper.Sc.Mvc">
       <HintPath>..\..\..\..\lib\Glass.Mapper.Sc.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Kamsar.WebConsole, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Kamsar.WebConsole.2.0.0\lib\net40\Kamsar.WebConsole.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MicroCHAP, Version=1.2.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\MicroCHAP.1.2.2.2\lib\net45\MicroCHAP.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Rainbow, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Rainbow.Core.2.0.0\lib\net452\Rainbow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rainbow.Storage.Sc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Rainbow.Storage.Sc.2.0.0\lib\net452\Rainbow.Storage.Sc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rainbow.Storage.Yaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Rainbow.Storage.Yaml.2.0.0\lib\net452\Rainbow.Storage.Yaml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Analytics, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>d:\inetpub\wwwroot\Pier7\Website\Bin\Sitecore.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.DataAccess, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Sitecore.Analytics.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.Model">
+      <HintPath>D:\NElson\Emaar\EmaarProjects\lib\Sitecore.Analytics.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Buckets, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Sitecore.Buckets.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Analytics">
+      <HintPath>D:\inetpub\wwwroot\Pier7\Website\bin\Sitecore.ContentSearch.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\inetpub\wwwroot\Pier7\Website\bin\Sitecore.ContentSearch.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.EmailCampaign, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Sitecore.EmailCampaign.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\lib\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.ListManagement">
+      <HintPath>D:\inetpub\wwwroot\Pier7\Website\bin\Sitecore.ListManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ListManagement.Analytics">
+      <HintPath>D:\inetpub\wwwroot\Pier7\Website\bin\Sitecore.ListManagement.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ListManagement.ContentSearch">
+      <HintPath>D:\inetpub\wwwroot\Pier7\Website\bin\Sitecore.ListManagement.ContentSearch.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Mvc">
       <HintPath>..\..\..\..\lib\Sitecore.Mvc.dll</HintPath>
@@ -70,6 +134,9 @@
     </Reference>
     <Reference Include="Sitecore.Mvc.Analytics">
       <HintPath>..\..\..\..\lib\Sitecore.Mvc.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc.ExperienceEditor">
+      <HintPath>D:\inetpub\wwwroot\Pier7\Website\bin\Sitecore.Mvc.ExperienceEditor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -87,6 +154,10 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Unicorn, Version=4.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Unicorn.Core.4.0.3\lib\net452\Unicorn.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -116,6 +187,7 @@
     <Content Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
+    <Content Include="App_Config\Include\Pier7\zSharedSession.config" />
     <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
     <Content Include="Assets\css\jquery.mCustomScrollbar.css" />
     <Content Include="Assets\css\custom.css" />
@@ -142,7 +214,29 @@
     <Content Include="Assets\img\responsive\background\shadow_top.png" />
     <Content Include="Assets\js\jquery.js" />
     <Content Include="Assets\js\jquery.mCustomScrollbar.min.js" />
+    <Content Include="App_Config\Include\Rainbow.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
+    <None Include="App_Config\Include\Unicorn\Unicorn.Remote.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.PowerShell.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Dilithium.config.example" />
+    <None Include="App_Config\Include\Unicorn\Unicorn.Deployed.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.CustomSerializationFolder.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.NewItemsOnly.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Dependency.config.example" />
+    <None Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
+    <None Include="Assets\js\jquery.validate-vsdoc.js" />
+    <Content Include="Assets\js\jquery.validate.js" />
+    <Content Include="Assets\js\jquery.validate.min.js" />
+    <Content Include="Assets\js\jquery.validate.unobtrusive.js" />
+    <Content Include="Assets\js\jquery.validate.unobtrusive.min.js" />
     <Content Include="Assets\js\script.js" />
+    <Content Include="Assets\js\sitecorerequiredfield.js" />
+    <Content Include="Assets\js\sitecoreregex.js" />
+    <Content Include="Email\enquires.html" />
     <Content Include="Views\Common\ColumnNavigation.cshtml" />
     <Content Include="Views\Common\Forms.cshtml" />
     <Content Include="Views\Common\Footer.cshtml" />
@@ -150,6 +244,8 @@
     <Content Include="Views\Common\LeftContainer.cshtml" />
     <Content Include="Views\Shared\Main.cshtml" />
     <Content Include="Views\Pages\Home.cshtml" />
+    <Content Include="App_Config\Include\Pier7\Pier7SiteSetting.config" />
+    <None Include="App_Config\Include\Pier7\ContactFacet.config" />
     <None Include="Properties\PublishProfiles\EmaarDev.pubxml" />
     <Content Include="Views\Shared\TwoColumn.cshtml" />
     <Content Include="Views\Components\Breadcrumb.cshtml" />
@@ -162,31 +258,37 @@
     <Content Include="Views\Pages\Sitemap.cshtml" />
     <Content Include="Views\Pages\Gallery.cshtml" />
     <Content Include="Views\Form\Index.cshtml" />
+    <Content Include="Views\Pages\Subscribe.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Attribute\SitecoreRegExAttribute.cs" />
+    <Compile Include="Attribute\SitecoreRequiredField.cs" />
+    <Compile Include="Attribute\ValidationErrorMsg.cs" />
     <Compile Include="Controllers\Common\BreadcrumbController.cs" />
     <Compile Include="Controllers\Common\ColumnNavigationController.cs" />
     <Compile Include="Controllers\Pages\SitemapController.cs" />
-    <Compile Include="Controllers\Component\TextAndTitleController.cs" />
     <Compile Include="Controllers\Component\TwoColumnController.cs" />
-    <Compile Include="Interface\ILeftContainer.cs" />
+    <Compile Include="Controllers\Pages\SubscribeController.cs" />
+    <Compile Include="Email\EmailHelper.cs" />
+    <Compile Include="HttpRequestProcessor1.cs" />
     <Compile Include="Models\Common\ColumnNavigation.cs" />
-    <Compile Include="Models\Common\ColumnNavigationViewModel.cs" />
-    <Compile Include="Models\Common\FooterModel.cs" />
-    <Compile Include="Models\Common\HeaderModel.cs" />
+    <Compile Include="Models\Common\MenuItem - Copy.cs" />
+    <Compile Include="Models\Pages\SubscribeModel.cs" />
+    <Compile Include="ViewModel\ColumnNavigationViewModel.cs" />
+    <Compile Include="Models\Common\Footer.cs" />
+    <Compile Include="Models\Common\Header.cs" />
     <Compile Include="Models\Common\MenuItem.cs" />
     <Compile Include="Models\Common\Settings.cs" />
     <Compile Include="Models\Component\Social.cs" />
     <Compile Include="Models\Component\Breadcrumb.cs" />
-    <Compile Include="Models\Component\BreadcrumbViewModel.cs" />
-    <Compile Include="Models\Component\ImageCarouselModel.cs" />
+    <Compile Include="ViewModel\BreadcrumbViewModel.cs" />
+    <Compile Include="Models\Component\ImageCarousel.cs" />
     <Compile Include="Models\Component\ImageComponent.cs" />
-    <Compile Include="Models\Common\LeftContainerModel.cs" />
-    <Compile Include="Models\Common\RightContainerModel.cs" />
+    <Compile Include="Models\Common\LeftContainer.cs" />
+    <Compile Include="Models\Common\RightContainer.cs" />
     <Compile Include="Models\Component\TextAndTitle.cs" />
     <Compile Include="Models\Pages\ContactUs.cs" />
     <Compile Include="Models\Pages\Dine.cs" />
@@ -194,10 +296,13 @@
     <Compile Include="Models\Pages\HomeModel.cs" />
     <Compile Include="Models\Common\PageClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\SitemapViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Views\web.config" />
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -206,11 +311,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Config\Include\Pier7\" />
-    <Folder Include="Controllers\Forms\" />
+    <Folder Include="App_Config\Include\Custom\" />
     <Folder Include="Models\Data\" />
     <Folder Include="Views\LeftContainer\" />
-    <Folder Include="Views\Sitemap\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\Emaar.Models\Emaar.Models.csproj">
@@ -261,7 +364,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\..\..\..\packages\OctoPack.3.6.3\build\OctoPack.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\OctoPack.3.6.3\build\OctoPack.targets'))" />
   </Target>
+  <Import Project="..\..\..\..\packages\OctoPack.3.6.3\build\OctoPack.targets" Condition="Exists('..\..\..\..\packages\OctoPack.3.6.3\build\OctoPack.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

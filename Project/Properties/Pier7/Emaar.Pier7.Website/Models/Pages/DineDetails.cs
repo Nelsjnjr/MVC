@@ -1,5 +1,5 @@
 ﻿using Emaar.Models.Base;
-using Emaar.Pier7.Website.Models.Component;
+using Emaar.Pier7.Website.Models.Common;
 using Emaar.Pier7.Website.Models.Component;
 using Glass.Mapper.Sc.Configuration.Attributes;
 using Glass.Mapper.Sc.Fields;
@@ -33,6 +33,6 @@ namespace Emaar.Pier7.Website.Models.Pages
         [SitecoreField("SocialMediaItems")]
         public virtual IEnumerable<Social> SocialMediaItems { get; set; }
         [SitecoreField("DineImages")]
-        public virtual IEnumerable<ImageComponent> DineImages { get; set; }
+        public virtual IEnumerable<ImageCaurosel> DineImages { get; set; }
     }
 }

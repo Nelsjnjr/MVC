@@ -34,17 +34,42 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>d:\inetpub\wwwroot\Pier7\Website\Bin\Sitecore.Analytics.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.Core, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\inetpub\wwwroot\Pier7\Website\bin\Sitecore.Analytics.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.DataAccess, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Emaar.Pier7.Website\Bin\Sitecore.Analytics.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.Model">
+      <HintPath>D:\NElson\Emaar\EmaarProjects\lib\Sitecore.Analytics.Model.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.EmailCampaign.Cm">
       <HintPath>d:\inetpub\wwwroot\Pier7\Website\Bin\Sitecore.EmailCampaign.Cm.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Forms.Core">
+      <HintPath>d:\inetpub\wwwroot\Pier7\Website\Bin\Sitecore.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\..\..\Nelson\EmaarProjects\lib\Sitecore.Kernel.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Logging, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Emaar.Pier7.Website\Bin\Sitecore.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Web">
       <HintPath>..\..\..\..\lib\Sitecore.Web.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.WFFM.Abstractions">
+      <HintPath>d:\inetpub\wwwroot\Pier7\Website\Bin\Sitecore.WFFM.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.WFFM.Actions">
+      <HintPath>d:\inetpub\wwwroot\Pier7\Website\Bin\Sitecore.WFFM.Actions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,11 +79,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomCommand.cs" />
     <Compile Include="CustomEvent.cs" />
-    <Compile Include="CustomPipeline.cs" />
+    <Compile Include="CustomFacet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RulePC.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

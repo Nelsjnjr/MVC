@@ -16,7 +16,7 @@ namespace Emaar.Pier7.GlobalConstants
             {
                 return ConfigManager.GetContextSite().ContentStartPath + "/Data/Footer/FooterItem";
             }
-        } 
+        }
         public static string HeaderItemPath
         {
             get
@@ -42,7 +42,7 @@ namespace Emaar.Pier7.GlobalConstants
         {
             get
             {
-                return "master";
+                return "web";
             }
         }
         public const string SitecoreContentRoot = "/sitecore/content";
@@ -53,5 +53,8 @@ namespace Emaar.Pier7.GlobalConstants
                 return ConfigManager.GetContextSite().ContentStartPath + "/Navigation/";
             }
         }
+        public const string EmailCampaignMangerRoot = "/sitecore/content/Email Campaign";
+       
+
     }
 }

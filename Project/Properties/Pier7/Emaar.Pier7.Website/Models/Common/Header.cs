@@ -9,7 +9,7 @@ using Emaar.Models.Base;
 namespace Emaar.Pier7.Website.Models.Common
 {
     [SitecoreType(TemplateId = "{D74D1DDE-7C70-4130-8979-8321B60EBC1D}", AutoMap = true)]
-    public class HeaderModel:BaseGlassItem,ILogo
+    public class Header:BaseGlassItem,ILogo
     {
      
         [SitecoreField("Logo")]

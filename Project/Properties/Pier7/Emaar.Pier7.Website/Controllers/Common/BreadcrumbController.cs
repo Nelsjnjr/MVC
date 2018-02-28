@@ -1,6 +1,7 @@
-﻿using Emaar.Pier7.Website.Models.Common;
+﻿using Emaar.Models.Base;
+using Emaar.Pier7.Website.Models.Common;
 using Emaar.Pier7.Website.Models.Component;
-using Emaar.Pier7.Website.Models.Component;
+using Emaar.Pier7.Website.ViewModel;
 using Glass.Mapper.Sc.Web.Mvc;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
@@ -22,25 +23,33 @@ namespace Emaar.Pier7.Website.Controllers.Common
             BreadcrumbViewModel breadcrumbViewModel = new BreadcrumbViewModel();
             Item currentItem = Sitecore.Context.Item; // Current sitecore item
             Item homePage = Sitecore.Context.Database.GetItem(Sitecore.Context.Site.RootPath + Sitecore.Context.Site.StartItem);
-            bool isLasItem = false;
+            bool isLasItem = false; 
             Item MainNavigationItem = null;
+          
             while (currentItem.ID != new ID(homePage.ID.ToGuid()))
             {
-                if (currentItem.TemplateID == ID.Parse("{3098B261-DA38-4E2F-84E0-CB15E1D4434F}"))
+                if (!isLasItem)
                 {
-                    MainNavigationItem = currentItem;
+                    MainNavigationItem = currentItem;            
+                    // add parent item to breadcrumb object (a list of parent items)
+                    breadcrumbMenu.Add(new Breadcrumb
+                    {
+                        IsLastItem = !isLasItem ? true : false,
+                        Url = Sitecore.Links.LinkManager.GetItemUrl(currentItem),
+                        Text = currentItem.Fields["Title"].ToString()
+                      
+                    });
                     currentItem = currentItem.Parent;
+                    isLasItem = true;
                     continue;
                 }
-                // add parent item to breadcrumb object (a list of parent items)
                 breadcrumbMenu.Add(new Breadcrumb
                 {
-                    IsLastItem =!isLasItem ? true :false,
-                    Url= Sitecore.Links.LinkManager.GetItemUrl(currentItem),
+                    IsLastItem = !isLasItem ? true : false,
+                    Url = Sitecore.Links.LinkManager.GetItemUrl(currentItem),
                     Text = currentItem.Fields["Title"].ToString()
                 });
-                isLasItem = true;
-                currentItem = currentItem.Parent; // get parent of current item
+                currentItem = currentItem.Parent;
             }
             breadcrumbMenu.Add(new Breadcrumb
             {
@@ -55,8 +64,9 @@ namespace Emaar.Pier7.Website.Controllers.Common
                 var model = SitecoreContext.GetItem<MenuItem>(MainNavigationItem.Children.FirstOrDefault().ID.ToGuid());
                 breadcrumbViewModel.SubMenus = model.NavigationItems.ToList();
             }
-           
             return View("~/Views/Components/Breadcrumb.cshtml", breadcrumbViewModel);
         }
+
     }
 }
+

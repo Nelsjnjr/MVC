@@ -1,8 +1,11 @@
 ﻿@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc.Extensions
 
 @inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.Models.Pages.HomeModel>
+@using (BeginEditFrame("/sitecore/content/Applications/WebEdit/Edit Frame Buttons/PageCarousel", Model.Id.ToString()))
+{
 <div class="imageLinksContainer">
-    @foreach (var item in Model.PageCarousel)
+   @foreach (var item in Model.PageCarousel)
     {
         int count = 1;
         <div class="imageLinkCol" id="col" @count>
@@ -20,8 +23,10 @@
             }
 
         </div>
-    }
+    }   
+    
 </div> 
+    }
 <div class="imageLinksContainerMob">
     @foreach (var item in Model.PageCarousel)
     {

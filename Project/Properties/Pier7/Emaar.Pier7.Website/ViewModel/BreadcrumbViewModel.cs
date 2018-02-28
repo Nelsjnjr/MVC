@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Emaar.Pier7.Website.Models.Component
-{
+namespace Emaar.Pier7.Website.ViewModel
+{ 
     public class BreadcrumbViewModel
     {
         public virtual List<Breadcrumb> MainBreadcrumbs { get; set; }

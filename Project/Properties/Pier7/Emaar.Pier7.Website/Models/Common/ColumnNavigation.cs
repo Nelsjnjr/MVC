@@ -41,5 +41,8 @@ namespace Emaar.Pier7.Website.Models.Common
 
         [SitecoreChildren]
         public virtual IEnumerable<MenuItem> NavigationItems { get; set; }
+
+        [SitecoreSelf]
+        public virtual IEnumerable<MenuItem> Self { get; set; }
     }
 }

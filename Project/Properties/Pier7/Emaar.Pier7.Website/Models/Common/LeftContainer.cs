@@ -9,7 +9,7 @@ using System.Web;
 using Emaar.Models.Base;
 namespace Emaar.Pier7.Website.Models.Common
 {
-    public class LeftContainerModel:BaseGlassItem
+    public class LeftContainer:BaseGlassItem
     {
         [SitecoreField("leftImage")]
         public virtual Image leftImage { get; set; }
@@ -23,7 +23,10 @@ namespace Emaar.Pier7.Website.Models.Common
         [SitecoreField("LeftArrowLink")]
         public virtual Link LeftArrowLink { get; set; }
         [SitecoreField("RightArrowLink")]
-        public virtual Link RightArrowLink { get; set; }      
+        public virtual Link RightArrowLink { get; set; }
 
+        [SitecoreField("ArrowTitle")]
+        public virtual string ArrowTitle { get; set; }
+        
     }
 }

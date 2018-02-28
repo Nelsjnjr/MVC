@@ -7,25 +7,39 @@ using Sitecore.Analytics;
 using Sitecore.Diagnostics;
 using Sitecore.Rules;
 using Sitecore.Rules.Conditions;
+using Sitecore.Rules.Actions;
+using Sitecore.SecurityModel;
+
 namespace Emaar.Core
 {
-    public class RulePC<T> : StringOperatorCondition<T> where T : RuleContext
+    public class CheckspecificTemplate<T> : StringOperatorCondition<T> where T : RuleContext
     {
         public string Value { get; set; }
 
         protected override bool Execute(T ruleContext)
         {
-            Assert.ArgumentNotNull(ruleContext, "ruleContext");
-            Assert.IsNotNull(Tracker.Current, "Tracker.Current is not initialized");
-            Assert.IsNotNull(Tracker.Current.Session, "Tracker.Current.Session is not initialized");
-            Assert.IsNotNull(Tracker.Current.Session.Interaction, "Tracker.Current.Session.Interaction is not initialized");
-
-            var currrentItemTemplateName = ruleContext.Item.TemplateName;
-
-            return Compare(currrentItemTemplateName, Value);
+            var itemTemplateName = ruleContext.Item.TemplateName;
+            return Compare(itemTemplateName, Value);
         }
+    }
+
+    public class SetNewTitle<T> : RuleAction<T> where T : RuleContext
+    {
+
+
+        public override void Apply(T ruleContext)
+        {
+            using (new SecurityDisabler())
+            {
+                ruleContext.Item.Editing.BeginEdit();
+                ruleContext.Item["Title"] = "Title1";
+                ruleContext.Item.Editing.EndEdit();
+            }
+        }
+
+
     }
 }
 
- 
+
 

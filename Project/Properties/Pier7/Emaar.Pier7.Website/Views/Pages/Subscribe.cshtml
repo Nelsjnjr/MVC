@@ -1,0 +1,182 @@
+﻿@using Sitecore.Mvc.Presentation
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.Models.Pages.SubscribeModel>
+  
+@using (@Html.BeginForm())
+{
+    <div class='contentContainer'>
+        <h1>Subscribe to hear more</h1>
+        <p>
+
+            <style>
+                .YourEmailPos {
+                    position: absolute;
+                    left: -9999px;
+                    top: -9999px;
+                }
+            </style>
+            @if (Model.IsFormEnabled)
+            {             <div id="maindiv">
+                <table border="0" class="Conatcustable">
+                    <tr>
+                        <td colspan="6"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            *
+                        </td>
+                        <td></td>
+                        <td width="110px">
+
+                            @Html.Label("FullName", new { @class = "label" })
+
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.FullName, new { @class = "normalInput fLeft", style = "width:300px;", maxlength="100" })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td valign="top">
+                            @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "Error" })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            *
+                        </td>
+                        <td></td>
+                        <td width="110px">
+
+                            @Html.Label("Contact Number", new { @class = "label" })
+
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.ContactNumber, new { @class = "normalInput", maxlength = "50" })
+
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td valign="top">
+                            @Html.ValidationMessageFor(m => m.ContactNumber, "", new { @class = "Error" })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            *
+                        </td>
+                        <td></td>
+                        <td width="110px">
+                            @Html.ValidationMessage("Email Address")
+                            @Html.Label("Email Address", new { @class = "label" })
+
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "normalInput", style = "width:300px;", maxlength = "50"})
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td valign="top">
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "Error" })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"></td>
+                        <td></td>
+                        <td valign="top" width="110px">
+
+                            @Html.Label("Comment/Enquiry", new { @class = "label" })
+
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            <!-- 2011.1.315.40 --><span id="txtMessage_wrapper" class="RadInput RadInput_Default" style="white-space:nowrap;">
+                                @Html.TextAreaFor(m => m.Comments, new { @class = "normalInput fLeft", style = "width:300px;height:150px;" })
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td valign="top">
+                            @Html.ValidationMessageFor(m => m.Comments, "", new { @class = "Error" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td valign="top" width="110px"></td>
+                        <td></td>
+                        <td>
+
+                            <input type="submit" name="btnSend" value="Send" id="btnSend" class="btn_contact" />
+                            <input name="txtEmail1" type="text" maxlength="50" id="txtEmail1" class="YourEmailPos" style="width:300px;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td valign="top"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            <br />
+                            <br />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            }
+
+        </p>
+    </div>
+    if (!Model.IsFormEnabled)
+    {
+        <div>
+            <p>
+                Thank you for subscribing to receive email updates about restaurants in Pier 7.
+            </p>
+        </div>
+    }
+    if (Model.IsError)
+    {
+        <div>
+            <p>
+                Due to some technical problem your request is not been processed.
+            </p>
+        </div>
+    }
+
+}	

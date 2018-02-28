@@ -9,7 +9,7 @@ using Emaar.Models.Base;
 namespace Emaar.Pier7.Website.Models.Common
 {
     [SitecoreType(TemplateId = "{C1E04B61-E275-4232-8E88-86D54E6C9C99}", AutoMap = true)]
-    public class FooterModel : BaseGlassItem
+    public class Footer : BaseGlassItem
     {  
         [SitecoreField("Copyright")]
         public virtual string Copyright { get; set; }

@@ -1,29 +1,29 @@
-﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.Models.Common.MenuItem>
-
+﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.ViewModel.SitemapViewModel>
+@using Emaar.Pier7.Data;
+@using Emaar.Models.Base
 <h1>@Model.Title</h1>
 <ul class="sitemapList">
 
-    @foreach (var mainItem in Model.NavigationItems)//MainNavigationItems
+    @foreach (var mainItem in Model.SitemapNodes.NavigationItems)//Pages like Dine
     {
+        var metaData = SitecoreHelper.GetItem<ExternalMetadata>(mainItem.Id);
+        if (metaData != null  && metaData.IncludeInSitemap)
+        {
 
-            foreach (var childItem in mainItem.NavigationItems)//Child items Example Dine
+            <li class="item">
+                <a href="@Editable(mainItem, x => x.Url)"> @Editable(mainItem, x => x.Title)</a>
+            </li>
+            if (mainItem.NavigationItems.Count() > 0)
             {
-                <li class="item">
-                    <a href="@Editable(childItem, x => x.Url)"> @Editable(childItem, x => x.Title)</a>
-                </li>
-                if (childItem.NavigationItems.Count() > 0)
-                {
-                    <ul class="subSiteMap">
-                        @foreach (var subItem in childItem.NavigationItems)//Sub child items like Atelier
-                        {
-                            <li class="item">
-                                <a href="@Editable(subItem, x => x.Url)"> @Editable(subItem, x => x.Title)</a>
-                            </li>
-                        }
-                    </ul>
-                }
+                <ul class="subSiteMap">
+                    @foreach (var subItem in mainItem.NavigationItems)//Sub child items like Atelier
+                    {
+                        <li class="item">
+                            <a href="@Editable(subItem, x => x.Url)"> @Editable(subItem, x => x.Title)</a>
+                        </li>
+                    }
+                </ul>
             }
+        }
     }
 </ul>
-
-

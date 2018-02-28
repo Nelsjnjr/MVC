@@ -1,4 +1,4 @@
-﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.Models.Component.BreadcrumbViewModel>
+﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Pier7.Website.ViewModel.BreadcrumbViewModel>
 <div class='breadcrums'>
     <ul>
         @foreach (var item in Model.MainBreadcrumbs)
@@ -14,16 +14,14 @@
         }
     </ul>
 </div>
-@if (Model.SubMenus.Count > 0)
+@if (Model.SubMenus !=null && Model.SubMenus.Count > 0)
 {
     <div class="submenu">
         <ul>
             @foreach (var nav in Model.SubMenus)
             {
                
-                    <li>  <a href="@nav.Url">@nav.Title</a></li>
-
-              
+                 <li>  <a href="@nav.Url">@nav.Title</a></li>              
             }
         </ul>
 

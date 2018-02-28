@@ -32,7 +32,7 @@ namespace Emaar.Models.Base
         [SitecoreInfo(SitecoreInfoType.ContentPath)]
         public virtual string ContentPath { get; set; }
 
-        [SitecoreField]
+        [SitecoreField("Title")]
         public virtual string Title { get; set; }
 
         [SitecoreField(FieldName = "__Sortorder")]

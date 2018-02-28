@@ -4,7 +4,7 @@
 
 @if (Model.IsTitleAllowed)
 {
-<h1>@Model.Title</h1>
+<h1>@Sitecore.Context.Item["Title"]</h1>
 }
 <div class="waysToDineItem">
 

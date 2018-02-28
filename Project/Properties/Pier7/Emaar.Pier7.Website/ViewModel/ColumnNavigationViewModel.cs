@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Emaar.Models.Base;
-namespace Emaar.Pier7.Website.Models.Common
+using Emaar.Pier7.Website.Models.Common;
+
+namespace Emaar.Pier7.Website.ViewModel
 {
     public class ColumnNavigationViewModel: BaseGlassItem
     {

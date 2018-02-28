@@ -1,33 +1,29 @@
 ﻿@using Sitecore.Mvc.Analytics.Extensions
-
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Emaar.Models.Base.ExternalMetadata>
 <!DOCTYPE html>
 
 <Html id="Html" xmlns="http://www.w3.org/1999/xhtml">
 
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head id="Head1">
-    <title>Pier 7 - Dubai Marina&#39;s Premiere Lifestyle Dining Destination</title>
-    <meta name="Title" content="Pier 7 - Dubai Marina&#39;s Premiere Lifestyle Dining Destination" />
-    <meta name="PageTitle" content="Pier 7 - Dubai Marina&#39;s Premiere Lifestyle Dining Destination" />
-    <meta name="keywords" content="Pier 7,  Dubai Marina Pier 7,  fine dining dubai" />
-    <meta name="Description" content="Pier 7 is Dubai Marina&#39;s premiere fine dining scene with 7 different restaurants offering exotic Arabic and Asian flavors and European inspired dining. " />
+    <title>@Model.Title</title>
+    @Html.Sitecore().VisitorIdentification()
+    <meta name="Title" content="@Model.MetaTitle" />
+    <meta name="PageTitle" content="@Model.MetaTitle" />
+    <meta name="keywords" content="@Model.MetaKeywords" />
+    <meta name="Description" content="@Model.MetaDescription" />
+    <meta name="og:type" content="@Model.OpenGraphType" />
+    <meta name="og:title" content="@Model.OpenGraphTitle" />
+    <meta name="og:url" content="@(!String.IsNullOrEmpty(Model.Url)?Model.Url:Request.Url.AbsoluteUri.ToString())" />
+    <meta name="og:description" content="@Model.OpenGraphDescription" />
 
-
-    <meta name="og:type" content="article" />
-    <meta name="og:title" content="Pier 7 - Dubai Marina&#39;s Premiere Lifestyle Dining Destination" />
-    <meta name="og:url" content="Index.html" />
-    <meta name="og:description" content="Pier 7 is Dubai Marina&#39;s premiere fine dining scene with 7 different restaurants offering exotic Arabic and Asian flavors and European inspired dining. " />
-
-    <link rel="canonical" href="Index.html" />
+    <link rel="canonical" href="@(!String.IsNullOrEmpty(Model.Url)?Model.Url:Request.Url.AbsoluteUri.ToString())" />
 
     <meta charset="UTF-8" />
-    <title>
-        Pier7
-    </title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        @Html.Sitecore().VisitorIdentification()
-        <link href="~/Assets/css/style.css" rel="stylesheet" />
+
+    <link href="~/Assets/css/style.css" rel="stylesheet" />
 
     <link href="~/Assets/css/jquery.mCustomScrollbar.css" rel="stylesheet" />
     <link href="~/Assets/css/custom.css" rel="stylesheet" />
@@ -35,24 +31,28 @@
     <script src="~/Assets/js/jquery.js"></script>
     <script src="~/Assets/js/jquery.mCustomScrollbar.min.js"></script>
     <script src="~/Assets/js/script.js"></script>
-
-    @*<script type='text/javascript' src="~/Assets/js/script.js"></script>*@
+    <script src="~/Assets/js/jquery.validate.min.js"></script>
+    <script src="~/Assets/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Assets/js/sitecoreregex.js"></script>
+    <script src="~/Assets/js/sitecorerequiredfield.js"></script>
+    @*@*<script type='text/javascript' src="~/Assets/js/script.js"></script>*@
     @*<script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+                (function (i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-25811096-3', 'pier7.ae');
-        ga('send', 'pageview');
+                ga('create', 'UA-25811096-3', 'pier7.ae');
+                ga('send', 'pageview');
 
-    </script>*@
+            </script>*@
     <!--ddd -->
-
+    
 </head>
 <body>
+
 
     <div id="homePage" class="mainContainer">
 
@@ -61,17 +61,16 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
         <!--End Header-->
         <!-- Start Body -->
         @Html.Sitecore().Placeholder("phMain")
-     
+
         <!--End body -->
         <!-- Start Social -->
         <div class='socialmediaIcons'>
-            @{var item = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse("{C8EF78EB-F336-4EEE-8D32-7D6F661D8357}"));
-                           }
-                @Html.Sitecore().ItemRendering(item)
+            @{
+                var item = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse("{C8EF78EB-F336-4EEE-8D32-7D6F661D8357}"));
+            }
+            @Html.Sitecore().ItemRendering(item)
 
-</div>
-
-        @Html.Sitecore().Placeholder("phSocial")
+        </div>
         <!--End Social -->
         <!-- Start Footer-->
         @Html.Sitecore().Placeholder("phFooter")
@@ -91,8 +90,7 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
         $(".page-header").removeClass("page-header");
 
     </script>
-  
+
 </body>
 
 </Html>
-
